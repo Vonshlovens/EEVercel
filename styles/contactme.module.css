@@ -1,0 +1,131 @@
+.container {
+    margin: 100px auto;
+    max-width: 600px;
+    background-color: var(--color-background);
+    padding: calc(4 * var(--size-bezel));
+    border-radius: var(--size-radius);
+    border: 3px solid var(--color-signal, currentColor);
+    box-shadow: .5rem .5rem 0 var(--color-text, currentColor);
+    animation: load_in 0.5s;
+    color: var(--color-dark);
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.calculateButton {
+    height: 2.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    background-color: var(--color-signal);
+    border-radius: var(--size-radius);
+    border: none;
+    color: var(--color-background);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.calculateButton:disabled {
+    color: var(--color-disabled)
+}
+
+.input {
+    position: relative;
+}
+
+.input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background, currentColor);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 3px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+}
+
+.input__field:focus+.input__label,
+.input__field:not(:placeholder-shown)+.input__label {
+    transform: translate(0.25rem, -65%) scale(0.8);
+    color: var(--color-accent);
+}
+
+.row>td>input {
+    max-width: 100px;
+}
+
+.remove {
+    background-color: var(--color-accent);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--size-radius);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.table {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table>thead>tr>th {
+    min-width: 100px;
+}
+
+.row>td>input {
+    max-width: 100px;
+}
+
+.tableBody {
+    width: 750px;
+}
+
+.tableBody>tbody>tr>td {
+    min-width: 100px;
+}
+
+@keyframes load_in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .pageContainer {
+        margin: 0 30px ;
+    }
+
+    .table {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .tableBody {}
+}

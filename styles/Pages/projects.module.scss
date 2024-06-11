@@ -1,0 +1,13 @@
+.pageContainer {
+    margin: 0 auto;
+    max-width: var(--container-width);
+    color: var(--color-text);
+
+    >*{
+        animation: load_in 0.4s;
+    }
+    >p {
+        margin-bottom: 1rem;
+        animation: load_in 0.3s;
+    }
+}

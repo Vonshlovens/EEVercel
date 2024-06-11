@@ -1,0 +1,17 @@
+.container{
+    position: fixed;
+    top:0;
+    left:0;
+    padding:2rem;
+    z-index: 100;
+}
+
+.backButton{
+    color: var(--color-text);
+    transition: all 0.3s ease-in-out;
+}
+
+.backButton:hover{
+    color: var(--color-signal);
+    transition: all 0.3s ease-in-out;
+}

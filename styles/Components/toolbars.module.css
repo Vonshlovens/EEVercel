@@ -1,0 +1,64 @@
+.toolbar {
+    position: fixed;
+    bottom: 160px;
+
+    font-weight: 500;
+}
+
+.toolbar.left {
+    left: 15px;
+}
+
+.toolbar.right {
+    right: 25px;
+    width: 0;
+}
+
+.toolbar__icons{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: -140px;
+}
+.toolbar__icons>*:hover{
+    color: var(--color-signal);
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+.toolbar__icons>*{
+    transition: all 0.2s ease-in-out;
+    color: var(--color-text);
+}
+
+.toolbar__contact {
+    transform: rotate(90deg) translateX(-1.5rem) translateY(-2px);
+    transition: all 0.4s ease-in-out;
+}
+.toolbar__contact>*{
+    text-transform: capitalize;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.toolbar__contact:hover > * {
+    color: var(--color-signal);
+    transition: all 0.4s ease-in-out;
+}
+
+.toolbar::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100px;
+    margin: 0px auto;
+    background-color: var(--color-text);
+    position: relative;
+    bottom: -160px;
+}
+
+@media(max-width: 800px) {
+    .toolbar {
+        display: none;
+    }
+}

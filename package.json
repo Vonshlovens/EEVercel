@@ -1,0 +1,39 @@
+{
+  "name": "japp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "debug": "node --inspect-brk ./node_modules/next/dist/bin/next",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@iconscout/react-unicons": "^2.0.2",
+    "@svgr/webpack": "^8.0.1",
+    "@types/node": "20.1.0",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.4",
+    "@vercel/analytics": "^1.0.1",
+    "@vercel/postgres": "^0.5.1",
+    "babel-plugin-macros": "^3.1.0",
+    "clsx": "^1.2.1",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "kysely": "^0.26.3",
+    "next": "^13.4.1",
+    "octokit": "^2.0.16",
+    "pg": "^8.11.3",
+    "phaser": "^3.60.0",
+    "react": "18.2.0",
+    "react-bootstrap-icons": "^1.10.3",
+    "react-dom": "18.2.0",
+    "react-dropdown-select": "^4.9.3",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.9",
+    "sass": "^1.62.1"
+  }
+}

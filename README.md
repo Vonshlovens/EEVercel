@@ -1,2 +1,1 @@
-# EEVercel
-Building a portfolio on Vercel
+Website made in Nextjs to practice typescript and front end development.
