@@ -21,7 +21,7 @@ export default function Home() {
 	const [dark, setDark] = useState(false);
 	const [active, setActive] = useState(false);
 	const [items, setItems] = useState<string>();
-	const [logo_theme, setTheme] = useState<StaticImageData>();
+	const [logo_theme, setTheme] = useState<StaticImageData>(Logo);
 	const [loading, setLoading] = useState(true);
 	const [activeTheme, setActiveTheme] = useState<String>();
 	
