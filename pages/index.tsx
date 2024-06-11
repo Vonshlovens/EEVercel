@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
-import Logo from "../public/JSLogo.png"
-import JordanLogo from "../public/JSLogo.svg"
+import Logo from "../public/saitamahead.png"
+import DarkLogo from "../public/saitamaheaddark.png"
 import { Journals, Joystick, Terminal, FilePerson, CodeSlash } from 'react-bootstrap-icons';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx'
@@ -21,22 +21,31 @@ export default function Home() {
 	const [dark, setDark] = useState(false);
 	const [active, setActive] = useState(false);
 	const [items, setItems] = useState<string>();
+	const [logo_theme, setTheme] = useState<StaticImageData>();
 	const [loading, setLoading] = useState(true);
-
+	const [activeTheme, setActiveTheme] = useState<String>();
+	
+	
 	useEffect(() => {
+		setActiveTheme(document.body.dataset.theme);
+		if(activeTheme === "light") {
+			setTheme(Logo);
+		} else {
+			setTheme(DarkLogo);
+		}
 		const fetch = async () => {
 			try {
-
+				
 				let commits = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-					owner: 'smuthbudda',
-					repo: 'japp',
+					owner: 'Vonshlovens',
+					repo: 'EEVercel',
 					per_page: 100,
 					headers: {
 						'X-GitHub-Api-Version': '2022-11-28'
 					}
 				})
 				let response = await octokit.request('GET /users/{username}', {
-					username: 'smuthbudda',
+					username: 'Vonshlovens',
 					headers: {
 						'X-GitHub-Api-Version': '2022-11-28'
 					}
@@ -56,9 +65,10 @@ export default function Home() {
 
 		if (prefersDark) {
 			setDark(true);
+			setTheme(DarkLogo);
 		}
 		setLoading(false);
-	}, [items])
+	}, [items, activeTheme])
 
 
 	function handleClick() {
@@ -68,10 +78,10 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Jordan Samson</title>
+				<title>Eric Evans</title>
 				<meta name="description" content="Jordan Samson" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/jordanLogo.png" />
+				<link rel="icon" href="/saitamahead.png" />
 			</Head>
 			<main >
 				<div className={styles.container}>
@@ -81,7 +91,7 @@ export default function Home() {
 					</div>
 					{/* <div className={styles.star}></div>
 					<div className={styles.star}></div> */}
-					<Image src={Logo} alt='Jordan Samson' height={325} width={325} className={styles.logo} onClick={() => handleClick()} />
+					<Image src={logo_theme} alt='Eric Evans' height={325} width={325} className={styles.logo} onClick={() => handleClick()} />
 					<div className={clsx(styles.innerlink, styles.link1, active ? styles.active : styles.nonactive)}>
 						<Link href={"/about"}>
 							<FilePerson className={styles.icon} />
@@ -110,8 +120,8 @@ export default function Home() {
 						T&F Calc
 					</div>
 					<div className={styles.bottomBar}>
-						<a href='https://github.com/smuthbudda/japp' target="_blank">
-							<small>Designed & Built by Jordan Samson
+						<a href='https://github.com/vonshlovens/eevercel' target="_blank">
+							<small>Designed & Built by Eric Evans
 								<br />
 								<CodeSlash className={styles.branchIcon} size={24} />
 								{!loading

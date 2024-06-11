@@ -39,7 +39,7 @@ const Navbar = () => {
         <nav className={clsx(styles.nav__container, show ? styles.hide_nav : styles.show_nav)}>
             {backButton()}
             <div className={styles.nav_top}>
-                <h1><Link href={"/"}>J<span>.</span>S<span>.</span></Link></h1>
+                <h1><Link href={"/"}>E<span>.</span>E<span>.</span></Link></h1>
                 <ThemeToggle />
             </div>
             <div className={styles.mobile_menu} onClick={() => SetnavActive(!navActive)}>
